@@ -1,4 +1,6 @@
+import { AddNote } from "./AddNote";
 import { Note } from "./Note";
+
 
 export const NotesList = ({ notes }) => {
   return (
@@ -6,6 +8,7 @@ export const NotesList = ({ notes }) => {
       {notes.map((note) => (
         <Note key={note.id} note={note} />
       ))}
+      <AddNote />
     </div>
   );
 };
