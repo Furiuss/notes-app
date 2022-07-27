@@ -1,12 +1,11 @@
-import {Note} from './Note';
+import { Note } from "./Note";
 
-export const NotesList = () => {
-
+export const NotesList = ({ notes }) => {
   return (
     <div className="notes-list">
-      <Note />
-      <Note />
-      <Note />
+      {notes.map((note) => (
+        <Note text={note.text} date={note.date} />
+      ))}
     </div>
-  )
-}
+  );
+};
