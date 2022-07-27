@@ -61,13 +61,26 @@ textarea:focus {
   align-items: center;
 }
 
-.note-footer > .delete-icon {
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.delete-icon,
+.edit-icon {
   cursor: pointer;
   transition: .20s;
   border-radius: 3px;
+  padding: 2px;
 }
 
-.note-footer > .delete-icon:hover {
+.delete-icon:hover {
   color: white;
   background-color: red;
+}
+
+.edit-icon:hover {
+  color: white;
+  background-color: #3AB0FF;
 }
