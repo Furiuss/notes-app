@@ -1,14 +1,22 @@
 import { useState } from "react";
 
-export const AddNote = ({addText}) => {
+export const AddNote = ({ addText }) => {
   const [noteText, setNoteText] = useState("");
+  const charecterLimit = 200;
+
+  const handleChange = (e) => {
+    if (charecterLimit - e.target.value.length >= 0) {
+      setNoteText(e.target.value);
+    }
+  };
 
   const handleSaveClick = () => {
-    const cleanText = noteText.trim()
+    const cleanText = noteText.trim();
+
     if (!cleanText) return;
-    addText(cleanText)
-    setNoteText("")
-  }
+    addText(cleanText);
+    setNoteText("");
+  };
 
   return (
     <div className="note new">
@@ -17,11 +25,13 @@ export const AddNote = ({addText}) => {
         rows="8"
         value={noteText}
         placeholder="Type to add a note..."
-        onChange={(e) => setNoteText(e.target.value)}
+        onChange={handleChange}
       ></textarea>
       <div className="note-footer">
-        <small>200 remaing</small>
-        <button onClick={handleSaveClick} className="save-btn">save</button>
+        <small>{charecterLimit - noteText.length} remaining</small>
+        <button onClick={handleSaveClick} className="save-btn">
+          save
+        </button>
       </div>
     </div>
   );
