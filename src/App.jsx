@@ -1,22 +1,22 @@
 import {useState} from 'react'
-import {uniqid} from 'uniqid'
+import {nanoid} from 'nanoid'
 import { NotesList } from "./components/NotesList";
 import './App.css'
 
 function App() {
   const [notes, setNotes] = useState([
     {
-      id: uniqid(),
+      id: nanoid(),
       text: 'This is my first note',
       date: '15/04/2021'
     },
     {
-      id: uniqid(),
+      id: nanoid(),
       text: 'This is my first note',
       date: '15/04/2021'
     },
     {
-      id: uniqid(),
+      id: nanoid(),
       text: 'This is my first note',
       date: '15/04/2021'
     }
