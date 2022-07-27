@@ -12,12 +12,12 @@ function App() {
     },
     {
       id: nanoid(),
-      text: 'This is my first note',
+      text: 'This is my second note',
       date: '15/04/2021'
     },
     {
       id: nanoid(),
-      text: 'This is my first note',
+      text: 'This is my third note',
       date: '15/04/2021'
     }
   ]);
