@@ -1,10 +1,10 @@
+import { NotesList } from "./components/NotesList";
+
 function App() {
-
-
   return (
-    <main>
-      
-    </main>
+    <div className="container">
+      <NotesList />
+    </div>
   )
 }
 
