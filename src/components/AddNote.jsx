@@ -4,7 +4,10 @@ export const AddNote = ({addText}) => {
   const [noteText, setNoteText] = useState("");
 
   const handleSaveClick = () => {
-    addText(noteText)
+    const cleanText = noteText.trim()
+    if (!cleanText) return;
+    addText(cleanText)
+    setNoteText("")
   }
 
   return (
