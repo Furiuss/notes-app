@@ -52,6 +52,7 @@ textarea:focus {
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
+  white-space: pre-wrap;
 }
 
 .note-footer {
