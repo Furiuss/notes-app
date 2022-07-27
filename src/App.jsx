@@ -22,9 +22,13 @@ function App() {
     }
   ]);
 
+  const addText = (text) => {
+    setNotes(notes => [...notes, text])
+  }
+
   return (
     <div className="container">
-      <NotesList notes={notes}/>
+      <NotesList addText={addText} notes={notes}/>
     </div>
   )
 }
