@@ -4,26 +4,9 @@ import { NotesList } from "./components/NotesList";
 import "./App.css";
 import { Search } from "./components/Search";
 
-const initialState = [
-  {
-    id: nanoid(),
-    text: "This is my first note",
-    date: "15/04/2021",
-  },
-  {
-    id: nanoid(),
-    text: "This is my second note",
-    date: "15/04/2021",
-  },
-  {
-    id: nanoid(),
-    text: "This is my third note",
-    date: "15/04/2021",
-  },
-]
-
 function App() {
-  const [notes, setNotes] = useState(initialState);
+  const [notes, setNotes] = useState([]);
+  const [searchText, setSearchText] = useState('')
 
   const addText = (text) => {
     const date = new Date();
@@ -41,11 +24,11 @@ function App() {
 
   return (
     <div className="container">
-      <Search />
+      <Search handleSearch={setSearchText}/>
       <NotesList
+        notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))}
         addText={addText}
         handleDeleteNote={deleteNote}
-        notes={notes}
       />
     </div>
   );
