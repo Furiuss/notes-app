@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 import { NotesList } from "./components/NotesList";
-import "./App.css";
 import { Search } from "./components/Search";
 import { Header } from "./components/Header";
+import "./App.css";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <div className={darkMode ? "dark-mode main" : 'main'}>
+    <div className={darkMode ? "dark-mode main" : "main"}>
       <div className="container">
         <Header handleToggleDarkMode={() => setDarkMode(!darkMode)} />
         {notes.length >= 1 && <Search handleSearch={setSearchText} />}
@@ -41,6 +41,8 @@ function App() {
           addText={addText}
           handleDeleteNote={deleteNote}
           handleEditNote={editNote}
+          isEditing={isEditing}
+          setIsEditing={setIsEditing}
         />
       </div>
     </div>

@@ -6,6 +6,8 @@ export const NotesList = ({
   addText,
   handleDeleteNote,
   handleEditNote,
+  isEditing,
+  setIsEditing
 }) => {
   return (
     <div className="notes-list">
@@ -15,9 +17,11 @@ export const NotesList = ({
           note={note}
           handleEditNote={handleEditNote}
           handleDeleteNote={handleDeleteNote}
+          isEditing={isEditing}
+          setIsEditing={setIsEditing}
         />
       ))}
-      <AddNote addText={addText} />
+      <AddNote editText={handleEditNote} addText={addText} />
     </div>
   );
 };

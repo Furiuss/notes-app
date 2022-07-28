@@ -1,5 +1,6 @@
 .container {
   max-width: 960px;
+  height: 100vh;
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
@@ -21,6 +22,10 @@ textarea {
   border: none;
   resize: none;
   font-size: 15px;
+}
+
+.editTextArea {
+  background-color: #fef68a;
 }
 
 textarea:focus {
@@ -68,7 +73,8 @@ textarea:focus {
 }
 
 .delete-icon,
-.edit-icon {
+.edit-icon,
+.saveEdit-icon {
   cursor: pointer;
   transition: .20s;
   border-radius: 3px;
@@ -83,6 +89,11 @@ textarea:focus {
 .edit-icon:hover {
   color: white;
   background-color: #3AB0FF;
+}
+
+.saveEdit-icon:hover {
+  color: white;
+  background-color: limegreen;
 }
 
 .search {
@@ -109,6 +120,7 @@ textarea:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .dark-mode {
@@ -119,7 +131,13 @@ textarea:focus {
   color: white;
 }
 
+.dark-mode button {
+  color: black;
+  background-color: white;
+}
+
 .header button {
+  margin-left: 2%;
   background-color: black;
   color: white;
   font-size: 15px;

@@ -1,18 +1,38 @@
-import { MdDeleteForever } from "react-icons/md";
+import { MdDeleteForever, MdSave } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 
-export const Note = ({ note, handleDeleteNote, handleEditNote }) => {
+export const Note = ({
+  note,
+  handleDeleteNote,
+  handleEditNote,
+  isEditing,
+  setIsEditing,
+}) => {
   return (
     <div className="note">
-      <span>{note.text}</span>
+      {isEditing ? (
+        <textarea className="editTextArea" cols="10" rows="8">
+          {note.text}
+        </textarea>
+      ) : (
+        <span>{note.text}</span>
+      )}
       <div className="note-footer">
         <small>{note.date}</small>
         <div className="icons">
-          <FaEdit
-            onClick={() => handleEditNote(note.id)}
-            className="edit-icon"
-            size="1.3em"
-          />
+          {isEditing ? (
+            <MdSave
+              onClick={() => setIsEditing(true)}
+              className="saveEdit-icon"
+              size="1.3em"
+            />
+          ) : (
+            <FaEdit
+              onClick={() => setIsEditing(true)}
+              className="edit-icon"
+              size="1.3em"
+            />
+          )}
           <MdDeleteForever
             onClick={() => handleDeleteNote(note.id)}
             className="delete-icon"
