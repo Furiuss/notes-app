@@ -104,3 +104,30 @@ textarea:focus {
 .search input:focus {
   outline: none;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark-mode {
+  background-color: black;
+}
+
+.dark-mode h1 {
+  color: white;
+}
+
+.header button {
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  font-weight: bolder;
+}
+
+.header button:hover {
+  background-color: black;
+  opacity: 0.7;
+}

@@ -1,7 +1,7 @@
 import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 
-export const Note = ({ note, handleDeleteNote }) => {
+export const Note = ({ note, handleDeleteNote, handleEditNote }) => {
   return (
     <div className="note">
       <span>{note.text}</span>
@@ -9,7 +9,7 @@ export const Note = ({ note, handleDeleteNote }) => {
         <small>{note.date}</small>
         <div className="icons">
           <FaEdit
-            onClick={() => handleDeleteNote(note.id)}
+            onClick={() => handleEditNote(note.id)}
             className="edit-icon"
             size="1.3em"
           />
